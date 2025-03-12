@@ -1,0 +1,91 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Magdalena\\source\\repos\\HGKATA\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C7192415-0CB7-4108-87AF-3AF7686735C1}|HGKATA.Tests\\HGKATA.Tests.csproj|c:\\users\\magdalena\\source\\repos\\hgkata\\hgkata.tests\\customerservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C7192415-0CB7-4108-87AF-3AF7686735C1}|HGKATA.Tests\\HGKATA.Tests.csproj|solutionrelative:hgkata.tests\\customerservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E942269-570B-4E6D-A8FA-89A58BEAD5C2}|HGKATA.Core\\HGKATA.Core.csproj|c:\\users\\magdalena\\source\\repos\\hgkata\\hgkata.core\\services\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E942269-570B-4E6D-A8FA-89A58BEAD5C2}|HGKATA.Core\\HGKATA.Core.csproj|solutionrelative:hgkata.core\\services\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E942269-570B-4E6D-A8FA-89A58BEAD5C2}|HGKATA.Core\\HGKATA.Core.csproj|c:\\users\\magdalena\\source\\repos\\hgkata\\hgkata.core\\services\\icustomerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E942269-570B-4E6D-A8FA-89A58BEAD5C2}|HGKATA.Core\\HGKATA.Core.csproj|solutionrelative:hgkata.core\\services\\icustomerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60D8F467-84AC-4772-8527-60D7B3C297DC}|HGKATA.API\\HGKATA.API.csproj|c:\\users\\magdalena\\source\\repos\\hgkata\\hgkata.api\\controllers\\customerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60D8F467-84AC-4772-8527-60D7B3C297DC}|HGKATA.API\\HGKATA.API.csproj|solutionrelative:hgkata.api\\controllers\\customerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ICustomerService.cs",
+              "DocumentMoniker": "C:\\Users\\Magdalena\\source\\repos\\HGKATA\\HGKATA.Core\\Services\\ICustomerService.cs",
+              "RelativeDocumentMoniker": "HGKATA.Core\\Services\\ICustomerService.cs",
+              "ToolTip": "C:\\Users\\Magdalena\\source\\repos\\HGKATA\\HGKATA.Core\\Services\\ICustomerService.cs",
+              "RelativeToolTip": "HGKATA.Core\\Services\\ICustomerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T12:02:02.879Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CustomersController.cs",
+              "DocumentMoniker": "C:\\Users\\Magdalena\\source\\repos\\HGKATA\\HGKATA.API\\Controllers\\CustomersController.cs",
+              "RelativeDocumentMoniker": "HGKATA.API\\Controllers\\CustomersController.cs",
+              "ToolTip": "C:\\Users\\Magdalena\\source\\repos\\HGKATA\\HGKATA.API\\Controllers\\CustomersController.cs",
+              "RelativeToolTip": "HGKATA.API\\Controllers\\CustomersController.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAIwDIAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T11:56:32.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CustomerService.cs",
+              "DocumentMoniker": "C:\\Users\\Magdalena\\source\\repos\\HGKATA\\HGKATA.Core\\Services\\CustomerService.cs",
+              "RelativeDocumentMoniker": "HGKATA.Core\\Services\\CustomerService.cs",
+              "ToolTip": "C:\\Users\\Magdalena\\source\\repos\\HGKATA\\HGKATA.Core\\Services\\CustomerService.cs",
+              "RelativeToolTip": "HGKATA.Core\\Services\\CustomerService.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAwwCoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T11:58:50.833Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CustomerServiceTests.cs",
+              "DocumentMoniker": "C:\\Users\\Magdalena\\source\\repos\\HGKATA\\HGKATA.Tests\\CustomerServiceTests.cs",
+              "RelativeDocumentMoniker": "HGKATA.Tests\\CustomerServiceTests.cs",
+              "ToolTip": "C:\\Users\\Magdalena\\source\\repos\\HGKATA\\HGKATA.Tests\\CustomerServiceTests.cs",
+              "RelativeToolTip": "HGKATA.Tests\\CustomerServiceTests.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAIwFMAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T12:12:33.361Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

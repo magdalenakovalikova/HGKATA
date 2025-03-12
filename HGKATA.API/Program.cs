@@ -1,7 +1,14 @@
+using HGKATA.Core.Domain;
+using HGKATA.Core.Services;
+using HGKATA.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Register the interface and its implementation
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+//builder.Services.AddScoped<ICustomerService, CustomerService>();
 
 // Add services to the container.
 builder.Services.AddControllers(

@@ -1,15 +1,20 @@
+using System.Linq.Expressions;
+using HGKATA.Core.Domain;
+using HGKATA.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HGKATA.API.Controllers;
 [ApiController]
 [Route("[Controller]")]
-public class CustomersController(ILogger<CustomersController> _logger) : ControllerBase
+public class CustomersController(ILogger<CustomersController> _logger, ICustomerRepository customerRepository) : ControllerBase
 {
-    public enum CustomerCategory
-    {
-        PolloPiriPiriLover,
-        PolloConHierbasLover
-    }
+    private readonly ICustomerRepository _customerRepository = customerRepository;
+    private readonly ICustomerService _customerService = new CustomerService(customerRepository);
+    /*     public enum CustomerCategory
+        {
+            PolloPiriPiriLover,
+            PolloConHierbasLover
+        } */
 
     [HttpPost("ClassifyCustomers")]
     public async Task<ActionResult<CustomerClassification>> ClassifyCustomers([FromBody] string content)
@@ -22,16 +27,29 @@ public class CustomersController(ILogger<CustomersController> _logger) : Control
             await Task.Yield();
 
             _logger.LogInformation("Processing customer classification with content: {Content}", content);
-            
+
+            var customers = _customerRepository.CreateCustomersFromPlainText(content);
+
+            _logger.LogInformation("Processing customer classification with customers: {customers}", customers);
+
             // TODO: Add actual customer classification logic here
-            var response = new CustomerClassification
+            /* var response = new CustomerClassification
             {
                 Categories = new List<CategorySegment>
                 {
                     new() { Category = CustomerCategory.PolloPiriPiriLover.ToString(), Customers = new List<string>() },
                     new() { Category = CustomerCategory.PolloConHierbasLover.ToString(), Customers = new List<string>() }
                 }
+            }; */
+            Dictionary<CustomerCategory, Expression<Func<HGKATA.Core.Domain.Customer, bool>>> rules = new Dictionary<CustomerCategory, Expression<Func<Customer, bool>>>
+            {
+                { CustomerCategory.PolloConHierbasLover, c =>
+                    c.Name.Contains('H', StringComparison.CurrentCultureIgnoreCase) || c.Name.Contains('B', StringComparison.CurrentCultureIgnoreCase) },
+                { CustomerCategory.PolloPiriPiriLover, c =>
+                    !c.Name.ToUpper().Contains('H') && !c.Name.ToUpper().Contains('B') }
             };
+            var response = _customerService.ClassifyCustomers2(rules);
+
 
             _logger.LogInformation("Successfully classified customers");
             return Ok(response);
