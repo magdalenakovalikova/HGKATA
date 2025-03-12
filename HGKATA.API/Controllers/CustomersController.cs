@@ -28,8 +28,8 @@ public class CustomersController(ILogger<CustomersController> _logger) : Control
             {
                 Categories = new List<CategorySegment>
                 {
-                    new() { Category = CustomerCategory.PolloPiriPiriLover, Customers = new List<string>() },
-                    new() { Category = CustomerCategory.PolloConHierbasLover, Customers = new List<string>() }
+                    new() { Category = CustomerCategory.PolloPiriPiriLover.ToString(), Customers = new List<string>() },
+                    new() { Category = CustomerCategory.PolloConHierbasLover.ToString(), Customers = new List<string>() }
                 }
             };
 
@@ -50,7 +50,7 @@ public class CustomersController(ILogger<CustomersController> _logger) : Control
 
     public class CategorySegment
     {
-        public CustomerCategory Category { get; set; }
+        public required string Category { get; set; }
         public List<string>? Customers { get; set; }
     }
 
