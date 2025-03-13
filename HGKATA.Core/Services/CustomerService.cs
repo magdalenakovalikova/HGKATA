@@ -5,19 +5,7 @@ namespace HGKATA.Core.Services;
 
 public class CustomerService : ICustomerService
 {
-    public List<Customer>? Customers { get; set; }
-
     public IDictionary<CustomerCategory, Expression<Func<Customer, bool>>> _classificationRules;
-
-    /* public CustomerService(List<Customer>? customers = null)
-    {
-        this.customers = customers ?? new List<Customer>
-        {
-            new() { Name = "John Doe" },
-            new() { Name = "Jane Smith" },
-            new() { Name = "Bob Wilson" }
-        };
-    } */
 
     private readonly ICustomerRepository _customerRepository;
 
@@ -39,13 +27,13 @@ public class CustomerService : ICustomerService
       IDictionary<CustomerCategory, Expression<Func<Customer, bool>>> classificationRules)
     {
         var result = new Dictionary<string, string[]>();
-        Customers = _customerRepository.GetCustomers();
-        if (Customers == null)
+        var customers = _customerRepository.GetCustomers();
+        if (customers == null)
         {
             return result;
         }
 
-        foreach (var customer in Customers)
+        foreach (var customer in customers)
         {
             var categories = new List<string>();
             foreach (var rule in classificationRules)
@@ -54,7 +42,6 @@ public class CustomerService : ICustomerService
                 if (compiledRule(customer))
                 {
                     categories.Add(rule.Key.ToString());
-                    //break;
                 }
                 result[customer.Name] = categories.ToArray();
             }
@@ -63,26 +50,28 @@ public class CustomerService : ICustomerService
         return result;
     }
     public IDictionary<string, string[]> ClassifyCustomers2(
-      IDictionary<CustomerCategory, Expression<Func<Customer, bool>>> classificationRules)
+      IDictionary<CustomerCategory, Expression<Func<Customer, bool>>>? classificationRules = null)
     {
+        if (classificationRules != null) { _classificationRules = classificationRules; }
+
         var result = new Dictionary<string, string[]>();
-        Customers = _customerRepository.GetCustomers();
-        if (Customers == null)
+        var customers = _customerRepository.GetCustomers();
+        if (customers == null)
         {
             return result;
         }
 
         // Initialize dictionary with empty arrays for each category
-        foreach (var category in classificationRules.Keys)
+        foreach (var category in _classificationRules.Keys)
         {
             result[category.ToString()] = Array.Empty<string>();
         }
 
         // Group customers by category
-        foreach (var rule in classificationRules)
+        foreach (var rule in _classificationRules)
         {
             var compiledRule = rule.Value.Compile();
-            var matchingCustomers = Customers
+            var matchingCustomers = customers
                 .Where(compiledRule)
                 .Select(c => c.Name)
                 .ToArray();

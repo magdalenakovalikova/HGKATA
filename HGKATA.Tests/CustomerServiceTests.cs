@@ -72,7 +72,7 @@ public class CustomerServiceTests
         var mockRepository = new Mock<ICustomerRepository>();
         // Mocking the method CreateCustomersFromPlainText
         var inputText = "John Doe\nJane Smith\nBob Wilson";
-        mockRepository.Setup(repo => repo.CreateCustomersFromPlainText(inputText))
+        mockRepository.Setup(repo => repo.GetCustomers())//CreateCustomersFromPlainText(inputText))
                       .Returns(new List<Customer>
                       {
                           new Customer { Name = "John Doe" },

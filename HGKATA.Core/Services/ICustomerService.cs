@@ -5,7 +5,6 @@ namespace HGKATA.Core.Services;
 
 public interface ICustomerService
 {
-    public List<Customer>? Customers { get; set; }
     /// <summary>
     /// Classifies customers into categories based on specified rules
     /// </summary>
@@ -20,4 +19,6 @@ public interface ICustomerService
     /// <returns>Dictionary mapping customers to their assigned categories</returns>
     IDictionary<string, string[]> ClassifyCustomers2(
       IDictionary<CustomerCategory, Expression<Func<Customer, bool>>> classificationRules);
+
+      List<Customer> GetAllCustomers();
 }

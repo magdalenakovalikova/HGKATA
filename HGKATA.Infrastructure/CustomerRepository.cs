@@ -32,8 +32,29 @@ public class CustomerRepository : ICustomerRepository
     return customers;
   }
 
+  public async Task<List<Customer>> CreateCustomersFromFileAsync(string filePath)
+  {
+    customers = new List<Customer>();
+    if (!File.Exists(filePath))
+    {
+      return customers;
+    }
+
+    var lines = await File.ReadAllLinesAsync(filePath);
+    foreach (var line in lines)
+    {
+      var nameParts = line.Split(' ');
+      if (nameParts.Length >= 2)
+      {
+        customers.Add(new Customer { Name = $"{nameParts[0]} {nameParts[1]}" });
+      }
+    }
+
+    return customers;
+  }
+
   public List<Customer> GetCustomers()
   {
-    return customers ?? new List<Customer>() ;
+    return customers ?? new List<Customer>();
   }
 }

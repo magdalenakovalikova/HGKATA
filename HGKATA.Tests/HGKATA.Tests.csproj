@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HGKATA.Core\HGKATA.Core.csproj" />
+    <ProjectReference Include="..\HGKATA.Infrastructure\HGKATA.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
