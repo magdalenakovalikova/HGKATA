@@ -30,7 +30,7 @@ public class CustomersController(ILogger<CustomersController> _logger, ICustomer
 
             var customers = _customerRepository.CreateCustomersFromPlainText(content);
 
-            _logger.LogInformation("Processing customer classification with customers: {customers}", customers);
+            _logger.LogInformation("Customers found: {number}", customers.Count);
 
             // TODO: Add actual customer classification logic here
             /* var response = new CustomerClassification

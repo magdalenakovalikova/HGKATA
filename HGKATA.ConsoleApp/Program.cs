@@ -17,6 +17,9 @@ if (!File.Exists(filePath))
     return;
 }
 
+string outputDir = args.Length > 1 ? args[1] : Directory.GetCurrentDirectory();
+Directory.CreateDirectory(outputDir);
+
 try
 {
     var repository = new CustomerRepository();
@@ -27,6 +30,7 @@ try
     foreach (KeyValuePair<string, string[]> category in response)
     {
         Console.WriteLine($"{category.Key}");
+        File.WriteAllText(Path.Combine(outputDir, $"{category.Key}.dat"), string.Join(Environment.NewLine, category.Value));
     }
 }
 catch (Exception ex)

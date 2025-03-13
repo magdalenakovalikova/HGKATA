@@ -23,5 +23,9 @@
   <ItemGroup>
     <Using Include="Xunit" />
   </ItemGroup>
+  <Target Name="CopyTestAssets" AfterTargets="Build">
+    <Copy SourceFiles="..\assets\hg-be-kata-data.dat"
+          DestinationFolder="$(OutputPath)\" />
+  </Target>
 
 </Project>

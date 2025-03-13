@@ -12,4 +12,10 @@
     <ProjectReference Include="..\HGKATA.Infrastructure\HGKATA.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="..\assets\hg-be-kata-data.dat">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

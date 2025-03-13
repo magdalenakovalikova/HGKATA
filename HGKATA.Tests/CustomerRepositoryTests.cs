@@ -12,7 +12,8 @@ public class CustomerRepositoryTests
     // Arrange
     var mockHttpClient = new Mock<HttpClient>(); // No actual HTTP requests needed
     var repository = new CustomerRepository();
-    var filePath = "C:\\Users\\Magdalena\\source\\repos\\HGKATA\\HGKATA.Tests\\file.dat"; // You can mock the file reading in tests
+    string filePath = Path.Combine(AppContext.BaseDirectory, "assets", "hg-be-kata-data.dat");
+    //var filePath = "C:\\Users\\Magdalena\\source\\repos\\HGKATA\\HGKATA.Tests\\file.dat"; // You can mock the file reading in tests
     await repository.CreateCustomersFromFileAsync(filePath);
 
     // Act
